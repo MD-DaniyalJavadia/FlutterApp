@@ -10,14 +10,14 @@ class MyApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return MaterialApp(
-      title: 'Learning Flutter',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.grey),
-      home : AnimatedSplashScreen(
-          duration: 3000,
-          splash: Image.asset('assets/Capture.png'),
-          nextScreen: WelcomePage(),
-          splashTransition: SplashTransition.fadeTransition,
-          backgroundColor: Colors.blue));
+        title: 'Learning Flutter',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(primarySwatch: Colors.grey),
+        home : AnimatedSplashScreen(
+            duration: 3000,
+              splash: Image.asset('assets/shoppingbags.webp'),
+            nextScreen: WelcomePage(),
+            splashTransition: SplashTransition.fadeTransition,
+            backgroundColor: Colors.blue));
   }
 }
