@@ -1,16 +1,15 @@
-import 'package:firstapp/screens/auth-ui/signup.dart';
+import 'package:firstapp/screens/auth-ui/siginpage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
 
-
-class SiginPage extends StatelessWidget {
+class SignupPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Sign In'), centerTitle: true),
+      appBar: AppBar(title: Text('Sign Up'), centerTitle: true),
       body: SingleChildScrollView(
-     child:Center(
+      child:Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -27,7 +26,7 @@ class SiginPage extends StatelessWidget {
               child: TextFormField(
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
-                  labelText: 'Enter your username',
+                  labelText: 'Email',
                 ),
               ),
             ),
@@ -36,9 +35,27 @@ class SiginPage extends StatelessWidget {
               child: TextFormField(
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
-                  labelText: 'Enter your Password',
+                  labelText: 'Password',
                 ),
                 obscureText: true,
+              ),
+            ),
+            Container(
+              width: 300,
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  labelText: 'Full Name',
+                ),
+              ),
+            ),
+            Container(
+              width: 300,
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  border: UnderlineInputBorder(),
+                  labelText: 'User Name',
+                ),
               ),
             ),
             SizedBox(height: 20),
@@ -52,31 +69,31 @@ class SiginPage extends StatelessWidget {
                 child: Text('Login', style: TextStyle(color: Colors.white)),
               ),
             ),
-            SizedBox(height: 100),
+            SizedBox(height: 50),
             Container(child: Column(
               children: [
                 RichText(text: TextSpan(
-                  children: [
-                    TextSpan(
-                      text:"Don't have an account? ",style: TextStyle(color: Colors.black),
-                    ),
-                    TextSpan(
-                      text: '',
-                    ),
+                    children: [
+                      TextSpan(
+                        text:"Have an account? ",style: TextStyle(color: Colors.black),
+                      ),
+                      TextSpan(
+                        text: '',
+                      ),
 
-                    TextSpan(
-                      text: 'Sign up',
-                      style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => SignupPage()),
-                          );
-                        },
-                    ),
+                      TextSpan(
+                        text: 'Sign In',
+                        style: TextStyle(color: Colors.blueAccent,fontWeight: FontWeight.bold),
+                          recognizer: TapGestureRecognizer()
+                            ..onTap = () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => SiginPage()),
+                              );
+                            }
+                      ),
 
-                  ]
+                    ]
                 ))
               ],
             )),

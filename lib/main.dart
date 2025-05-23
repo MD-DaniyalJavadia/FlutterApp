@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget
   Widget build(BuildContext context)
   {
     return MaterialApp(
-        title: 'Learning Flutter',
+        title: 'Online Shopping',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(primarySwatch: Colors.grey),
         home : AnimatedSplashScreen(
