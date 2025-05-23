@@ -1,3 +1,4 @@
+import 'package:firstapp/constants/app_constant.dart';
 import 'package:firstapp/screens/auth-ui/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -17,7 +18,7 @@ class SiginPage extends StatelessWidget {
           children: [
             Container(
               child: Image.asset(
-                'assets/shoppingbags.webp',
+                AppConstant.logoImage,
                 height: 400,
                 width: 200,
               ),

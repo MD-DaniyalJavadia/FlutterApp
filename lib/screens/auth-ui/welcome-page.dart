@@ -1,3 +1,4 @@
+import 'package:firstapp/constants/app_constant.dart' show AppConstant;
 import 'package:flutter/material.dart';
 import 'package:firstapp/screens/auth-ui/siginpage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -10,7 +11,7 @@ class WelcomePage extends StatelessWidget
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Online Shopping',
+          AppConstant.appName,
           style: GoogleFonts.dancingScript(
             color: Colors.white,
             fontSize: 24,
@@ -26,7 +27,7 @@ class WelcomePage extends StatelessWidget
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Container(
-              child: Image.asset('assets/shoppingbags.webp',height: 400,width: 200,),
+              child: Image.asset(AppConstant.logoImage,height: 400,width: 200,),
             ),
             Container(
                 width: 220,
@@ -50,7 +51,7 @@ class WelcomePage extends StatelessWidget
             ),
             Container(
               alignment: Alignment.center,
-              child: Text('Online Shopping',style: TextStyle(fontWeight:FontWeight.bold),),
+              child: Text(AppConstant.appName,style: TextStyle(fontWeight:FontWeight.bold),),
             ),
           ],
         ),
