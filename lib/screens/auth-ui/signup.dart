@@ -1,12 +1,26 @@
 import 'package:firstapp/constants/app_constant.dart' show AppConstant;
 import 'package:firstapp/screens/auth-ui/siginpage.dart';
+import 'package:firstapp/components/singup_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/gestures.dart';
 
-class SignupPage extends StatelessWidget {
+
+import 'package:provider/provider.dart';class SignupPage extends StatefulWidget {
+  @override
+  State<SignupPage> createState() => _SignUpPageState();
+}
+class _SignUpPageState extends State<SignupPage>
+{
+
+  TextEditingController name = TextEditingController();
+  TextEditingController email = TextEditingController();
+  TextEditingController fullname = TextEditingController();
+  TextEditingController password = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
+    SigupProvider sigupProvider=Provider.of<SigupProvider>(context);
     return Scaffold(
       appBar: AppBar(title: Text('Sign Up'), centerTitle: true),
       body: SingleChildScrollView(
@@ -25,6 +39,7 @@ class SignupPage extends StatelessWidget {
             Container(
               width: 300,
               child: TextFormField(
+                controller: email,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Email',
@@ -34,6 +49,7 @@ class SignupPage extends StatelessWidget {
             Container(
               width: 300,
               child: TextFormField(
+                controller: password,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Password',
@@ -44,6 +60,7 @@ class SignupPage extends StatelessWidget {
             Container(
               width: 300,
               child: TextFormField(
+                controller: fullname,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'Full Name',
@@ -53,6 +70,7 @@ class SignupPage extends StatelessWidget {
             Container(
               width: 300,
               child: TextFormField(
+                controller: name,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
                   labelText: 'User Name',
@@ -63,7 +81,9 @@ class SignupPage extends StatelessWidget {
             Container(
               width: 300,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  sigupProvider.SignupValidation(userName: name, userEmail: email, userPassword: password, context: context);
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blueAccent,
                 ),
